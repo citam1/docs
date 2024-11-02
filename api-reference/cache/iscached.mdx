@@ -1,0 +1,20 @@
+---
+title: "cache.iscached"
+description: "Returns true if the instance is in the instance cache."
+---
+
+```lua
+cache.iscached(i: Instance): boolean
+```
+## Example
+
+```lua
+local Lighting = game:GetService("Lighting")
+print(cache.iscached(Lighting)) -- outputs: true
+
+cache.invalidate(game:GetService("Lighting"))
+print(cache.iscached(Lighting)) -- outputs: false
+```
+
+
+

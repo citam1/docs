@@ -1,0 +1,16 @@
+---
+title: "iscclosure"
+description: "Returns true if the input closure is a c closure."
+---
+
+```lua
+iscclosure(f: function): boolean
+```
+
+
+## Example
+
+```lua
+print(iscclosure(function() end)) -- outputs: false
+print(iscclosure(hookfunction)) -- outputs: true
+```

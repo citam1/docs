@@ -1,0 +1,48 @@
+---
+title: "Class: SwiftSignal"
+---
+
+```lua
+Signal.new(f: function?): SwiftSignal, SwiftConnection?
+```
+
+Creates and returns a `SwiftSignal`. If a function `f` is provided, it also creates a [SwiftConnection](./swiftconnection) and returns it along with the signal.
+
+```lua
+Signal:Connect(f: function): SwiftConnection
+```
+Connects a function `f` to the Signal when the signal is fired, the function will execute.
+
+```lua
+Signal:Fire(...: any): void
+```
+Fires all connections connected to the signal (if the connectons are enabled) with the provided paramaters (`...`).
+
+```lua
+Signal:Delete(): void
+```
+Deletes the connection.
+
+## Examples
+
+### Creating a signal without providing a function
+
+```lua
+local signal = Signal.new()
+
+local connection = signal:Connect(function(arg) 
+    print(arg)
+end)
+
+signal:Fire("Hello",1,{}) -- outputs: "Hello" (from the connection)
+```
+
+### Same example but providing a function
+
+```lua
+local signal, connection = Signal.new(function(arg) 
+    print(arg)
+end)
+
+signal:Fire("Hello",1,{}) -- outputs: "Hello" (from the connection)
+```

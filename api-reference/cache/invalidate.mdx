@@ -1,0 +1,21 @@
+---
+title: "cache.invalidate"
+description: "Invalidates an instance."
+---
+
+```lua
+cache.invalidate(i: Instance): void
+```
+Removes `i` from the roblox instnace cache. Effectively removing the `i` as a reference to the Instance.
+
+## Example
+
+```lua
+local Lighting = game:GetService("Lighting")
+cache.invalidate(game:GetService("Lighting"))
+
+print(Lighting, Lighting == game:GetService("Lighting")) -- outputs: Lighting, false
+```
+
+
+

@@ -1,0 +1,51 @@
+---
+title: "hookfunction"
+description: "Hooks a function with another function."
+---
+
+```lua
+hookfunction(f: function, r: function): function
+```
+`f` is the original function we want to hook and `r` is the function we want to hook with.
+
+If the `f` is a cclosure swift and `r` is an lclosure then swift will transform `r` into a cclosure and vice versa (same goes with lua closures).
+
+`hookfunction` will return the old function so you can call it with the old arguments as shown in the example below.
+
+
+## Examples
+
+### Hooking our own function
+```lua
+local function test(arg1)
+    print(arg1)
+end
+
+test("wow") -- outputs: "wow"
+
+local old -- create a variable to save the old function
+old = hookfunction(test,function(self,...) 
+    local args = {...}
+    print("First arg is: ".. args[1])
+
+    return old(self,...) -- return the old function to make sure the code flow continues as normal.  
+end)
+
+test("wow") -- outputs: "First arg is: wow" and "wow"
+```
+
+### Hooking a game function
+```lua
+local old
+old = hookfunction(Instance.new("RemoteEvent").FireServer, newcclosure(function(self,...)
+    if self.Name == "FallRemote" then
+        return -- stops the event from firing.
+    end
+
+    return old(self,...)
+end))
+```
+Example of stopping fall damage in a game.
+
+## Aliases
+- replaceclosure

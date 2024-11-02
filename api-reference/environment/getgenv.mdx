@@ -1,0 +1,19 @@
+---
+title: "getgenv"
+description: "Gets the executor global environment."
+---
+
+<Note>The global environment presists between execution threads.</Note>
+```lua
+getgenv(): table
+```
+
+
+## Example
+
+```lua
+print(getgenv()) -- outputs: table: 0x...
+
+getgenv().fire = true
+print(getgenv().fire) -- outputs: true
+```

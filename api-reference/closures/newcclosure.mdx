@@ -1,0 +1,19 @@
+---
+title: "newcclosure"
+description: "Converts a closure into a C closure."
+---
+
+```lua
+newcclosure(f: function): function
+```
+If `f` is already a C closure it will just return the same function.
+
+## Example
+
+```lua
+function test() end
+iscclosure(test) -- outputs: false
+
+local ctest = newcclosure(test)
+iscclosure(ctest) -- outputs: true
+```

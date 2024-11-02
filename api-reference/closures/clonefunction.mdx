@@ -1,0 +1,20 @@
+---
+title: "clonefunction"
+description: "Clones the input function."
+---
+
+```lua
+clonefunction(f: function): function
+```
+
+
+## Example
+
+```lua
+local cloned_identifyexecutor = clonefunction(identifyexecutor)
+getgenv().identifyexecutor = nil
+
+identifyexecutor() -- will error
+cloned_identifyexecutor -- outputs: "Swift, version XX.XX"
+
+```

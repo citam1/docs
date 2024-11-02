@@ -1,0 +1,20 @@
+---
+title: "isexecutorclosure"
+description: "Returns true if the closure was created by swift."
+---
+
+```lua
+isexecutorclosure(f: function): boolean
+```
+
+
+## Example
+
+```lua
+
+isexecutorclosure(function() end) -- Returns true
+isexecutorclosure(print) -- Returns false
+```
+## Aliases
+- checkclosure
+- isourclosure

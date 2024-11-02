@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Swift Docs",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/logo.png",
+    "light": "/logo/logo.png"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/logo/logo.png",
   "colors": {
     "primary": "#0D9373",
     "light": "#07C983",
@@ -17,13 +17,13 @@
   },
   "topbarLinks": [
     {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "name": "Home",
+      "url": "https://bunni.lol"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "Discord",
+    "url": "https://discord.gg/ugX6uEJV8h"
   },
   "tabs": [
     {
@@ -32,56 +32,80 @@
     }
   ],
   "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
+
     {
       "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "icon": "discord",
+      "url": "https://discord.gg/ugX6uEJV8h"
     }
+
   ],
   "navigation": [
+
+
     {
-      "group": "Get Started",
+      "group": "API Reference",
       "pages": [
-        "introduction",
-        "quickstart",
-        "development"
-      ]
-    },
-    {
-      "group": "Essentials",
-      "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
-      ]
-    },
-    {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        {
+          "group": "Environment",
+          "pages": [
+            "api-reference/environment/getgenv",
+            "api-reference/environment/getrenv",
+            "api-reference/environment/getreg",
+            "api-reference/environment/getgc",
+            "api-reference/environment/getthreadidentity",
+            "api-reference/environment/setthreadidentity"
+          ]
+        },
+        {
+          "group": "Closures",
+          "pages": [
+            "api-reference/closures/iscclosure",
+            "api-reference/closures/islclosure",
+            "api-reference/closures/clonefunction",
+            "api-reference/closures/isexecutorclosure",
+            "api-reference/closures/checkcaller",
+            "api-reference/closures/hookfunction",
+            "api-reference/closures/newcclosure"
+          ]
+        },
+        {
+          "group": "Actors",
+          "pages": [
+            "api-reference/actors/run_on_actor",
+            "api-reference/actors/getactors"
+
+          ]
+        },
+        {
+          "group": "Cache library",
+          "pages": [
+            "api-reference/cache/cloneref",
+            "api-reference/cache/getinstances",
+            "api-reference/cache/getnilinstances",
+            "api-reference/cache/compareinstances",
+            "api-reference/cache/invalidate",
+            "api-reference/cache/iscached",
+            "api-reference/cache/replace"
+
+          ]
+        },
+      
+        {
+          "group": "Signals",
+          "pages": [
+            "api-reference/signal/swiftsignal",
+            "api-reference/signal/swiftconnection"
+
+
+          ]
+        }
+        
       ]
     }
+      
+    
+
   ],
   "footerSocials": {
     "x": "https://x.com/mintlify",

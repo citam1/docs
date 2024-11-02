@@ -1,0 +1,21 @@
+---
+title: "cache.replace"
+description: "Replaces an Instance with another Instance."
+---
+
+```lua
+cache.replace(i1: Instance, i2: Instance): void
+```
+## Example
+
+```lua
+local Lighting = game:GetService("Lighting")
+local Players = game:GetService("Players")
+
+cache.replace(Lighting, Players)
+
+print(Lighting) -- outputs: Players
+```
+
+
+

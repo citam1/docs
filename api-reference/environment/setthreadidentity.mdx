@@ -1,0 +1,20 @@
+---
+title: "setthreadidentity"
+description: "Sets the current thread identity."
+---
+
+```lua
+setthreadidentity(identity: number): void
+```
+<Warning>Setting the thread identity to lower than 8 will prevent you from using some Instances / Services.</Warning>
+
+## Example
+
+```lua
+setthreadidentity(2)
+printidentity() -- outputs: 2
+```
+
+## Aliases
+- setidentity
+- setthreadcontext

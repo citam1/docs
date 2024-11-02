@@ -1,0 +1,17 @@
+---
+title: "getgc"
+description: "Gets the garbage collector."
+---
+
+```lua
+getgc(include_tables: boolean): table
+```
+
+
+## Example
+
+```lua
+for i,v in pairs(getgc()) do
+    print(i,v)
+end
+```

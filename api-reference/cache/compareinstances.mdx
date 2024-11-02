@@ -1,0 +1,21 @@
+---
+title: "compareinstances"
+description: "Comapres two instances."
+---
+
+```lua
+compareinstances(i1: Instance, i2: Instance): boolean
+```
+
+
+## Example
+
+```lua
+local new_game = cloneref(game)
+print(new_game == game) -- outputs: false
+
+compareinstances(new_game,game) -- returns: true
+```
+
+
+

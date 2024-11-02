@@ -1,0 +1,18 @@
+---
+title: "run_on_actor"
+description: "Runs the input string on the specified actor."
+---
+
+```lua
+run_on_actor(actor: Actor, code: string, ...: any): void
+```
+If the `actor` does not have any scripts in it, it will create a new one.
+<Info>run_on_actor is usually used for bypassing roblox anti cheats.</Info>
+
+## Example
+
+```lua
+run_on_actor(getactors[1], [[
+    print("wow")
+]]) --outputs "wow"
+```

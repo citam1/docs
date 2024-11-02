@@ -1,0 +1,16 @@
+---
+title: "islclosure"
+description: "Returns true if the input closure is a lua closure."
+---
+
+```lua
+islclosure(f: function): boolean
+```
+
+
+## Example
+
+```lua
+print(islclosure(function() end)) -- outputs: true
+print(islclosure(hookfunction)) -- outputs: false
+```
