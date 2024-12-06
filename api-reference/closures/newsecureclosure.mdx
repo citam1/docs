@@ -1,0 +1,57 @@
+---
+title: "newsecureclosure"
+description: "Creates a new special C closure with a secure environment."
+---
+
+```lua
+newsecureclosure(f: function, tbl: table?): function
+```
+Creates a new C Closure that runs at the thread identity `2`, [setthreadidentity](../environment/setthreadidentity) in the closure is **disabled**. All hooks are disabled and the whole environment is removed.
+
+You can specify custom function names in the `tbl` table, making those functions available within the secure closure.
+
+This table should contain **only** the names of functions that you want to **allow** access to in the secure environment. If `tbl` is omitted, the secure closure will be created without access to any additional functions.
+
+If `f` is already a C closure it will throw an error.
+
+<Warning>Remember, any functions you allow in the closure can be detected by Roblox's anti-cheat system, which might check if they exist. Furthermore HttpGet will NOT be available, use request.</Warning>
+## Examples
+
+
+### Creating a secure closure without providing any functions.
+```lua
+local secureclosure = newsecureclosure(function()
+    print(getgenv) -- outputs: nil
+    print(game.Players) -- outputs: Players
+end)
+
+secureclosure()
+```
+
+### Creating a secure closure with custom functions.
+```lua
+local secureclosure = newsecureclosure(function()
+    print(getgenv()) -- outputs: table: 0x??????
+    print(game.Players) -- outputs: Players
+    print(identifyexecutor())  -- outputs: "Swift" "0.0.0"
+end, {"getgenv","identifyexecutor"})
+
+secureclosure()
+```
+
+### Hooking with secure closures
+```lua
+local old;
+old = hookmetamethod(game,"__namecall",newsecureclosure(function(self,...) 
+
+    local namemethod = getnamecallmethod()
+
+    if nameMethod == "FireServer" and game.IsA(self, "RemoteEvent") then
+        if self.Name == "FallRemote" then
+            return;
+        end
+    end
+    
+    return old(self,...)
+end), {"getnamecallmethod"})
+```

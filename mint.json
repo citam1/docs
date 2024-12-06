@@ -92,10 +92,11 @@
         },
       
         {
-          "group": "Signals",
+          "group": "Classes",
           "pages": [
-            "api-reference/signal/swiftsignal",
-            "api-reference/signal/swiftconnection"
+            "api-reference/classes/swiftsignal",
+            "api-reference/classes/swiftconnection",
+            "api-reference/classes/swiftstore"
 
 
           ]

@@ -1,0 +1,36 @@
+---
+title: "Class: SwiftStore"
+description: "Stores values that will persist between game servers."
+---
+
+```lua
+Store.get(key: string): SwiftStore
+```
+
+Creates and returns a `SwiftStore` based on the provided key. If the store with the key `key` doesn't exist, it will create a new store.
+
+```lua
+SwiftStore:Get(key: string): string / boolean / number / nil
+```
+Retrieves the value associated with the specified key from the underlying store.
+
+```lua
+SwiftStore:Set(key: string, value: string / boolean / number / nil): void
+```
+Sets the value associated with the specified key from the underlying store.
+
+
+## Examples
+
+### Creating a store and setting a new value.
+
+```lua
+local store = Store.get("wow")
+
+print(store:Get("testing")) -- outputs: nil
+
+store:Set("testing",12)
+
+print(store:Get("testing")) -- outputs: 12
+```
+
