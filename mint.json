@@ -100,6 +100,17 @@
 
 
           ]
+        },
+        {
+          "group": "Crypt",
+          "pages": [
+            "api-reference/crypt/base64encode",
+            "api-reference/crypt/base64decode",
+            "api-reference/crypt/encrypt",
+            "api-reference/crypt/decrypt",
+            "api-reference/crypt/generatebytes",
+            "api-reference/crypt/generatekey"
+          ]
         }
         
       ]

@@ -1,0 +1,23 @@
+---
+title: "base64encode"
+description: "Returns a base64encoded string based on the provided input string."
+---
+
+```lua
+base64encode(input: string): string
+```
+Encodes the `input` string and returns the encoded result. Can use [base64decode](./base64decode) to decode the string back to the original.
+
+
+
+## Example
+
+```lua
+local foo = "Hello World!"
+print(foo) outputs: "Hello World!"
+
+local encoded = base64encode(foo)
+print(encoded) outputs: "SGVsbG8gV29ybGQh"
+```
+
+
