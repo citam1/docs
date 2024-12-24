@@ -42,7 +42,10 @@
   ],
   "navigation": [
 
-
+    {
+      "group": "Get Started",
+      "pages": ["Introduction"]
+    },
     {
       "group": "API Reference",
       "pages": [

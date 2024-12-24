@@ -1,0 +1,34 @@
+This documentation covers all the custom functions available in Swift.
+<Warning>The Swift documentation is currently a work in progress. All custom functions may not be documented.</Warning>
+
+
+## Guide to Documentation
+Lets take function `fireclickdetector` for an example.
+```lua
+fireclickdetector(p1: Instance<ClickDetector>, distance: number?): void
+```
+
+This structure serves as the foundation for all function definitions in the documentation.
+
+First we have the function name, in this case `fireclickdetector`.
+Next, anything enclosed within the parentheses `(` and `)` represents the parameters of the function.
+
+### Paramaters
+
+Paramaters are values that you pass into the function.
+Lets take a look at some parameters and types.
+
+In this case we have 2 paramaters `p1` and `distance`.
+We can also see their types.
+
+* `p1` is of type of Instance, and specifically an Instance of the class `ClickDetector` (denoted by the `<` and `>`)
+
+* `distance` is of type number, which in Lua can represent either a float (double) or an integer. Additionally, the `?` after the type declaration indicates that the parameter is optional.
+
+### Return value
+We can see that `fireclickdetector` returns `void`, which means it doesn't return any value. The return type is declared after the closing parentheses.
+
+That’s basically it! You can now continue exploring more functions in the [API Referance](/api-reference).
+
+**Have fun exploiting!**
+

@@ -1,0 +1,26 @@
+---
+title: "firetouchinterest"
+description: "Fires and replicates a touch between 2 parts."
+---
+
+```lua
+firetouchinterest(p1: Instance<Part/BasePart>, p2: Instance<Part/BasePart>, typeinfo: number): void
+```
+Fires a "touch" event between `p1` and `p2`. Any functions that are connected to .Touched signal of those parts, will be invoked.
+The `typeinfo` parameter can be either 1 or 0, where 1 represents a "touch" and 0 represents an "untouch".
+
+
+
+## Example
+
+```lua
+  local foo = Instance.new("Part",workspace);
+  foo.Touched:Connect(function(part)
+        print("TOUCHED")
+  end)
+
+  firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,foo,1)
+  firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,foo,0)
+  --outputs: "TOUCHED"
+```
+
