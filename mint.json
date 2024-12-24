@@ -114,6 +114,14 @@
             "api-reference/crypt/generatebytes",
             "api-reference/crypt/generatekey"
           ]
+        },
+        {
+          "group": "Misc",
+          "pages": [
+            "api-reference/misc/fireclickdetector",
+            "api-reference/misc/firetouchinterest"
+
+          ]
         }
         
       ]
