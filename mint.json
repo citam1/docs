@@ -122,6 +122,21 @@
             "api-reference/misc/firetouchinterest"
 
           ]
+        },
+        {
+          "group": "Input library",
+          "pages": [
+            "api-reference/input/isrbxactive",
+            "api-reference/input/keypress",
+            "api-reference/input/keyrelease",
+            "api-reference/input/keyclick",
+            "api-reference/input/mouse1press",
+            "api-reference/input/mouse1release",
+            "api-reference/input/mouse1click",
+            "api-reference/input/mouse2press",
+            "api-reference/input/mouse2release",
+            "api-reference/input/mouse2click"
+          ]
         }
         
       ]
